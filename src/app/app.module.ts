@@ -14,7 +14,12 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { CarsComponent } from './cars/cars.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
-import { AccComponent } from './acc/acc.component';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AddCarsComponent } from './add-cars/add-cars.component';
+import { AddUsersComponent } from './add-users/add-users.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,15 +33,23 @@ import { AccComponent } from './acc/acc.component';
     CarsComponent,
     UsersComponent,
     LoginComponent,
+    AddCarsComponent,
+    AddUsersComponent,
+    
     
     
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatIconModule,
+    
+    
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
