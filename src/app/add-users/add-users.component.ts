@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-users',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './add-users.component.css'
 })
 export class AddUsersComponent {
+
+  constructor(private route:Router){}
+
+  onCancel(): void {
+    this.route.navigateByUrl('admin/users')
+      }
 
 }

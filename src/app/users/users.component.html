@@ -8,7 +8,7 @@
         
     </div>
     <div class="btndiv">
-      <button class="btn btn-primary" [routerLink]="['/adduser']">Ajouter utilisateur</button>      
+      <button class="btn btn-primary" [routerLink]="['adduser']">Ajouter utilisateur</button>      
         
     </div>
   </section>
@@ -38,18 +38,20 @@
           </td>
           <td> <strong> $128.90 </strong></td>
           <td> <strong>Dady Said</strong></td>
-          <td >
-            <a  >
-              <mat-icon >
-                  edit_square
-              </mat-icon>
-            </a>
-            <a >
-              <mat-icon >
-                person_remove
-                </mat-icon>
-                
-            </a>
+          <td  >
+            <div class="space-left2">
+              <a class="">
+                <i class="bi bi-eye-fill"></i>
+              </a>
+              <a class="">
+                <i class="bi bi-pencil-square"></i> <!-- Example Bootstrap icon -->
+              </a>
+              <a class="">
+                <i class="bi bi-person-dash"></i> <!-- Example Bootstrap icon -->
+              </a>
+            </div>
+            
+            
           </td>
           
 

@@ -1,42 +1,69 @@
 <div class="card">
   <!-- En-tête de la carte -->
-  <div class="card-header">Nouvelle Utilisateur </div>
+  <div class="card-header">Nouvelle Utilisateur</div>
 
   <div class="card-body">
     <form >
-      <!-- Champ pour le nom d'utilisateur -->
-      <div class="form-group">
-        <label for="username">Nom d'utilisateur :</label>
-        <input type="text" class="form-control" formControlName="name" placeholder=" Nom d'utilisateur" />
-      </div>
+      <!-- Product Name Field -->
+      <div class="form-group mb-3">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" id="nom" placeholder="Enter Nom" formControlName="name" required />
+        </div>
 
-      <!-- Champ pour l'email -->
+
       <div class="form-group">
         <label for="email">Email :</label>
-        <input type="text" formControlName="email" class="form-control" placeholder="Enter Email" required/>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Enter Email "
+          formControlName="email"
+          required
+
+        />
       </div>
 
-      <!-- Champ pour le mot de passe -->
       <div class="form-group">
-        <label for="password">Mot de passe :</label>
-        <input type="password" class="form-control" formControlName="password" placeholder=" Mot De Passe" required />
+        <label for="password" >Mot de passe :</label>
+        <input
+          type="number"
+          class="form-control"
+          id="password"
+          placeholder="Enter Mot de passe"
+          formControlName="password"
+          required
+        />
       </div>
 
-      <!-- Champ pour le rôle -->
       <div class="form-group">
-        <label for="role">Role :</label>
-        <input type="text" formControlName="role" class="form-control" placeholder="Admin ou Agent" required/>
+        <label for="role" >Role :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="role"
+          placeholder="Specifier Role"
+          formControlName="role"
+          required
+        />
       </div>
 
-      <!-- Boutons pour Enregistrer et Annuler -->
       <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-light" style="background-color: rgba(146, 195, 238, 0.597); border-radius: 0.5rem;" >
+        <button 
+        type="submit"
+        class="btn btn-light"
+        style="background-color: rgba(146, 195, 238, 0.597); border-radius: 0.5rem;">
           Enregistrer
         </button>
-        <button type="button" class="btn btn-light" style="background-color: rgba(255, 0, 0, 0.597); border-radius: 0.5rem;" >
+        <button
+          type="button"
+          class="btn btn-light"
+          style="background-color: rgba(255, 0, 0, 0.597); border-radius: 0.5rem;"
+          (click)="onCancel()">
           Annuler
         </button>
       </div>
     </form>
   </div>
 </div>
+

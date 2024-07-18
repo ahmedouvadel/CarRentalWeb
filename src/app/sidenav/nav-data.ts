@@ -1,17 +1,17 @@
-export const navbarData= [
+export const navbarData = [
   {
     routeLink: 'dashboard',
     icon: 'fal fa-home',
-    label:'Dashboard'
+    label: 'Dashboard'
   },
   {
     routeLink: 'statistics',
     icon: 'fal fa-chart-bar',
-    label:'Statistics'
+    label: 'Statistics'
   },
   {
     routeLink: 'cars',
-    icon: 'fal fa-car', 
+    icon: 'fal fa-car',
     label: 'Car Status'
   },
   {
@@ -22,6 +22,6 @@ export const navbarData= [
   {
     routeLink: 'settings',
     icon: 'fal fa-cog',
-    label:'Settings'
+    label: 'Settings'
   }
-]
+];

@@ -18,6 +18,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AddCarsComponent } from './add-cars/add-cars.component';
 import { AddUsersComponent } from './add-users/add-users.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+
 
 
 
@@ -35,6 +40,7 @@ import { AddUsersComponent } from './add-users/add-users.component';
     LoginComponent,
     AddCarsComponent,
     AddUsersComponent,
+    AdminComponent,
     
     
     
@@ -44,12 +50,15 @@ import { AddUsersComponent } from './add-users/add-users.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatIconModule,
-    
-    
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
-    provideAnimationsAsync()
-  ],
+    //{ provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
+],
+    /* provideAnimationsAsync(),
+    provideAnimationsAsync('noop'),
+   */
   bootstrap: [AppComponent]
 })
 export class AppModule { }

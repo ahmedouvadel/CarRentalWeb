@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-cars',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './add-cars.component.css'
 })
 export class AddCarsComponent {
+
+  constructor(private router:Router){}
+
+  onCancel():void {
+    this.router.navigateByUrl('/cars')
+  }
 
 }

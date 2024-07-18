@@ -1,24 +1,24 @@
 <div class="card">
   <!-- En-tête de la carte -->
-  <div class="card-header">Ajouter un produit</div>
+  <div class="card-header">Ajouter un vehicule</div>
 
   <div class="card-body">
     <form >
       <!-- Product Name Field -->
       <div class="form-group mb-3">
-        <label for="nomproduit">Nom produit :</label>
-        <input type="text" class="form-control" id="nomproduit" placeholder="Enter nom produit" formControlName="name" required />
+        <label for="marque">Marque :</label>
+        <input type="text" class="form-control" id="marque" placeholder="Enter Marque" formControlName="name" required />
         </div>
 
 
       <div class="form-group">
-        <label for="prix">Prix unitaire :</label>
+        <label for="modele">Modele :</label>
         <input
           type="text"
           class="form-control"
-          id="prix"
-          placeholder="Enter prix "
-          formControlName="oldPrice"
+          id="modele"
+          placeholder="Enter Modele "
+          formControlName="modele"
           required
 
         />
@@ -26,13 +26,13 @@
 
       <!-- Champ pour le remise -->
       <div class="form-group">
-        <label for="remise" >Prix remise :</label>
+        <label for="annee" >Annee :</label>
         <input
           type="number"
           class="form-control"
-          id="remise"
-          placeholder="Enter remise"
-          formControlName="price"
+          id="annee"
+          placeholder="Enter Annee"
+          formControlName="annee"
           required
         />
       </div>
@@ -54,13 +54,13 @@
 
       <!-- Champ pour le service -->
       <div class="form-group">
-        <label for="description">Description :</label>
+        <label for="prix">prix (jour) :</label>
         <input
           type="text"
           class="form-control"
-          id="description"
-          placeholder="Entre description"
-          formControlName="description"
+          id="prix"
+          placeholder="Entre Prix"
+          formControlName="prix"
           required
 
         />
@@ -70,30 +70,18 @@
 
       <!-- Champ pour le numéro de téléphone -->
       <div class="form-group">
-        <label for="description">Coler :</label>
+        <label for="proprietaire">Proprietaire :</label>
         <input
           type="text"
           class="form-control"
-          id="description"
-          placeholder="Entre coler"
-          formControlName="color"
+          id="proprietaire"
+          placeholder="Entre Proprietaire"
+          formControlName="proprietaire"
           required
 
         />
       </div>
 
-      <div class="form-group">
-        <label for="description">Taille :</label>
-        <input
-          type="text"
-          class="form-control"
-          id="description"
-          placeholder="Entre taille"
-          formControlName="size"
-          required
-
-        />
-      </div>
 
       <!-- Boutons pour Enregistrer et Annuler -->
       <div class="d-flex justify-content-between">
@@ -107,6 +95,7 @@
           type="button"
           class="btn btn-light"
           style="background-color: rgba(255, 0, 0, 0.597); border-radius: 0.5rem;"
+          (click)="onCancel()"
         >
           Annuler
         </button>

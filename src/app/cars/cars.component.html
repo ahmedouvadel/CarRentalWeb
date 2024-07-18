@@ -7,7 +7,7 @@
       <input type="search" placeholder="Search Data...">
       
   </div>
-  <div class="btndiv" [routerLink]="['/addcar']">
+  <div class="btndiv" [routerLink]="['addcar']">
     <button class="btn btn-primary" >Ajouter Voiture</button>      
       
   </div>
@@ -17,18 +17,22 @@
     <thead>
       <tr>
         <th> Id </th>
+        <th> Img</th>
         <th> Marque </th>
         <th> Modele </th>
         <th> Annee </th>
         <th> Disponible </th>
         <th> Prix (jour) </th>
         <th> Proprietaire </th>
+        <th> Action </th>
+
 
       </tr>
     </thead>
     <tbody>
       <tr>
         <td> 1 </td>
+        <td style="justify-items: center;"> <img style="border-radius:10px ;" src="../../assets/vue-laterale-avant-voiture-sport-rouge-roue-noire-couleur-argent-metallique.jpg" width="50" height="50" alt=""></td>
         <td> inzu Chan Lee</td>
         <td> Seoul </td>
         <td> 17 Dec, 2022 </td>
@@ -37,6 +41,21 @@
         </td>
         <td> <strong> $128.90 </strong></td>
         <td> <strong>Dady Said</strong></td>
+        <td  >
+          <div class="space-left2">
+            <a class="">
+              <i class="bi bi-eye-fill"></i>
+            </a>
+            <a class="">
+              <i class="bi bi-pencil-square"></i> <!-- Example Bootstrap icon -->
+            </a>
+            <a class="">
+              <i class="bi bi-trash"></i>
+            </a>
+          </div>
+          
+          
+        </td>
       </tr>
     </tbody>
   </table>

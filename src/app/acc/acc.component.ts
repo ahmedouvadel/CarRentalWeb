@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-interface SideNavToggle {
+/* interface SideNavToggle {
   screenWidth: number;
   collapsed: boolean;
-}
+} */
 
 @Component({
   selector: 'app-acc',
@@ -12,12 +12,12 @@ interface SideNavToggle {
 })
 export class AccComponent {
 
-  isSideNavCollapsed = false;
+/*   isSideNavCollapsed = false;
   screenWidth = 0;
 
   onToggleSideNav(data: SideNavToggle): void{
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
-  }
+  } */
 
 }

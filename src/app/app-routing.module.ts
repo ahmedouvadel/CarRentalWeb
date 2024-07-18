@@ -10,18 +10,24 @@ import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { AddCarsComponent } from './add-cars/add-cars.component';
 import { AddUsersComponent } from './add-users/add-users.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent,/*  canActivate: [AuthGuard]  */},
-  { path: 'statistics', component: StatisticsComponent,/*  canActivate: [AuthGuard]  */},
-  { path: 'cars', component: CarsComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'users', component: UsersComponent, /* canActivate: [AuthGuard] */ },
-  { path: 'settings', component: SettingsComponent, /* canActivate: [AuthGuard] */ },
   { path: 'login', component: LoginComponent },
-  { path:'addcar', component: AddCarsComponent},
-  { path:'adduser', component: AddUsersComponent},
-
-
+  { 
+    path: 'admin', 
+    component: AdminComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'statistics', component: StatisticsComponent },
+      { path: 'cars', component: CarsComponent },
+      { path: 'cars/addcar', component: AddCarsComponent },
+      { path: 'users', component: UsersComponent },
+      { path: 'users/adduser', component: AddUsersComponent },
+      { path: 'settings', component: SettingsComponent },
+    ]
+  },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({

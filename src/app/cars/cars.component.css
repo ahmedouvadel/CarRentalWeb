@@ -13,15 +13,9 @@ width: auto !important;
 }
 }
 
-/*@page {
-  size: landscape;
-  margin: 0; 
-}*/
-
 body {
   min-height: 100vh;
-/*   background: url(images/html_table.jpg) center / cover;
- */  display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -59,11 +53,9 @@ div.table {
   background-color: rgba(218, 218, 218, 0.267);
   padding: 0 .8rem;
   border-radius: 2rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   transition: .2s;
 }
 
@@ -72,11 +64,6 @@ div.table {
   background-color: #fff8;
   box-shadow: 0 .1rem .4rem #0002;
 }
-
-/* .table__header .input-group img {
-  width: 1.2rem;
-  height: 1.2rem;
-} */
 
 .table__header .input-group input {
   width: 100%;
@@ -98,7 +85,6 @@ div.table {
   overflow: overlay;
 }
 
-
 .table__body::-webkit-scrollbar{
   width: 0.5rem;
   height: 0.5rem;
@@ -118,15 +104,6 @@ div.table {
 table {
   width: 100%;
 }
-
-/* td img {
-  width: 36px;
-  height: 36px;
-  margin-right: .5rem;
-  border-radius: 50%;
-
-  vertical-align: middle;
-} */
 
 table, th, td {
   border-collapse: collapse;
@@ -235,10 +212,6 @@ thead th span.icon-arrow {
   transition: .2s ease-in-out;
 }
 
-/* thead th:hover span.icon-arrow{
-  border: 1.4px solid #6c00bd;
-} */
-
 tbody td:hover {
   cursor: pointer;
   color: #1001deab;
@@ -247,17 +220,15 @@ tbody td:hover {
 .text-h1{
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: xx-large;
+  font-weight: bold;
+
 }
 
 .div-text-h1{
   background-color: #fff;
   text-align: center;
 }
-
-/* thead th:hover {
-  cursor: pointer;
-  color: #25c09e;
-} */
 
 thead th.active span.icon-arrow{
   background-color: #373e702c;
@@ -294,6 +265,20 @@ thead th.active,tbody td.active {
   width: 65%;
   background-color: #fff5;
   color: #000;
+  box-shadow: 0 .1rem .4rem #0002;
+}
+.bi{
+  cursor: pointer;
+  font-size: large;
+  padding: 0.3rem;
+  color: #263238;
+  transition: .2s ;
+}
+.bi:hover{
+  font-size: x-large;
+  padding: 0.3rem;
+  background-color: #fff5;
+  color: #9acee8;
   box-shadow: 0 .1rem .4rem #0002;
 }
 
