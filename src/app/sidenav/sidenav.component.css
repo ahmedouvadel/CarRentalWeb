@@ -108,3 +108,28 @@
   }
 }
 
+.logout-dialog .mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout-dialog .mat-button {
+  background: #fff;
+  color: #263238;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: #263238;
+  color: #fff;
+}
+.plogout{
+  color: #263238;
+  font-weight: 600;
+  font-family: 'Poppins';
+}
+.slogout{
+  color: #cb2929;
+}

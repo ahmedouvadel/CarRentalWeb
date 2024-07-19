@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AddCarsComponent } from './add-cars/add-cars.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthenticationGuard } from './guard/authentication.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

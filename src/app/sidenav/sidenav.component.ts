@@ -1,6 +1,8 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
 import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -33,10 +35,14 @@ interface SideNavToggle {
   ]
 })
 export class SidenavComponent implements OnInit {
+  @ViewChild('logoutDialog') logoutDialog!: TemplateRef<any>;
+  dialogRef!: MatDialogRef<any>;
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
+
+  constructor(private dialog: MatDialog, private router: Router) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -68,5 +74,15 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
+  }
+
+  openLogoutDialog(): void {
+    this.dialogRef = this.dialog.open(this.logoutDialog);
+  }
+
+  confirmLogout(): void {
+    this.dialogRef.close();
+    localStorage.clear();
+    this.router.navigateByUrl('/login')
   }
 }

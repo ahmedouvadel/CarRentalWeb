@@ -15,13 +15,14 @@ import { CarsComponent } from './cars/cars.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { MatIconModule } from '@angular/material/icon';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AddCarsComponent } from './add-cars/add-cars.component';
 import { AddUsersComponent } from './add-users/add-users.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { customInterceptor } from './interceptors/custom.interceptor';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -40,8 +41,7 @@ import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
     LoginComponent,
     AddCarsComponent,
     AddUsersComponent,
-    AdminComponent,
-    
+    AdminComponent    
     
     
   ],
@@ -52,8 +52,10 @@ import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [
+    provideHttpClient(withInterceptors([customInterceptor]))
     //{ provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
 ],
     /* provideAnimationsAsync(),

@@ -8,10 +8,28 @@
   </div>
   <ul class="sidenav-nav">
     <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a class="sidenav-nav-link" 
+         [routerLink]="[data.routeLink]" 
+         routerLinkActive="active" 
+         [routerLinkActiveOptions]="{ exact: true }"
+         (click)="data.routeLink === 'logout' ? openLogoutDialog() : null">
         <i class="sidenav-link-icon" [class]="data.icon"></i>
         <span class="sidenav-link-text" *ngIf="collapsed" @fadeInOut>{{data.label}}</span>
       </a>
     </li>
   </ul>
 </div>
+
+<!-- Logout Confirmation Dialog -->
+<ng-template #logoutDialog>
+  <div class="logout-dialog">
+    <h1 class="plogout" mat-dialog-title>Logout</h1>
+    <div mat-dialog-content>
+      <p class="plogout">Are you sure you want to <strong class="slogout">Logout</strong> ?</p>
+    </div>
+    <div mat-dialog-actions>
+      <button class="btn" mat-button (click)="confirmLogout()">Yes</button>
+      <button class="btn" mat-button (click)="dialogRef.close()">No</button>
+    </div>
+  </div>
+</ng-template>
