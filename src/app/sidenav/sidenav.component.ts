@@ -3,6 +3,7 @@ import { navbarData } from './nav-data';
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AuthService } from '../Services/AuthSevice/auth.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -42,7 +43,7 @@ export class SidenavComponent implements OnInit {
   screenWidth = 0;
   navData = navbarData;
 
-  constructor(private dialog: MatDialog, private router: Router) {}
+  constructor(private dialog: MatDialog, private authService: AuthService) {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -80,9 +81,8 @@ export class SidenavComponent implements OnInit {
     this.dialogRef = this.dialog.open(this.logoutDialog);
   }
 
-  confirmLogout(): void {
-    this.dialogRef.close();
-    localStorage.clear();
-    this.router.navigateByUrl('/login')
+  confirmLogout() {
+    this.authService.logout();
+    this.dialog.closeAll();
   }
 }

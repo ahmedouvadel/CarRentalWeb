@@ -1,6 +1,8 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { jwtDecode } from "jwt-decode";
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,20 +10,23 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   
 
-   url:string="http://localhost:9090";
+   urlLogin:string=environment.apiUrlLogin;
+   urlProduction:string | undefined;
 
    isAuthenticated: boolean = false;
    roles:any;
-   accessToken!: string;
+   accessToken: string | any;
    username: any;
 
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient,
+    private route:Router,
+  ) {}
 
   public login(username: string, password: string) {
     const headers = new HttpHeaders().set("Content-Type","application/x-www-form-urlencoded");
     
     const params = new HttpParams().set("username",username).set("password",password);
-    return this.http.post(this.url +"/auth/login", params , {headers} );
+    return this.http.post(this.urlLogin, params , {headers} );
   }
 
   loadProfile(res: any) {
@@ -31,14 +36,15 @@ export class AuthService {
     this.username=decodeJwt.sub
     this.roles=decodeJwt.scope
     console.log(this.roles,this.username)
-    localStorage.setItem('username',decodeJwt.sub)
-    localStorage.setItem('token',this.accessToken)
-    localStorage.setItem('role',decodeJwt.scope)
+    window.localStorage.setItem('username',decodeJwt.sub)
+    window.localStorage.setItem('token',this.accessToken)
+    window.localStorage.setItem('role',decodeJwt.scope)
     }
 
-  /* logout() {
-    this.isLoggedIn = false;
-  } */
+   logout() {
+    window.localStorage.clear()
+    this.route.navigateByUrl('/login')
+  } 
 
 }
  
